@@ -2,12 +2,13 @@ import utils.helper as uhp
 
 def val_prodct(
     
-    valor: str = None,
-    clave: str = None,
-    lista: list = None,
-    mensaje: str = None
+    valor:str = None,
+    clave:str = None,
+    lista:list = None,
+    mensaje:str = None
     
     ) -> bool:
+    
 
     if any(v is None for v in (valor, clave, lista, mensaje)):
         
