@@ -1,6 +1,6 @@
 import utils.helper as uhp
 
-def valido_flotante(mensaje: str = None) -> tuple[bool, float]:
+def valido_flotante(mensaje:str = None) -> tuple[bool, float]:
     
     if mensaje is None:
         

@@ -19,11 +19,14 @@ def main():
             
             case 2: #agregar producto
                 vw.agregar_producto()
-            
-            case 3: #registar stock
+                
+            case 3: #quitar producto
                 pass
             
-            case 4: #tienda
+            case 4: #registar stock
+                pass
+            
+            case 5: #tienda
                 pass
             
             case _:

@@ -1,6 +1,6 @@
 import utils.helper as uhp
 
-def valido_entero(mensaje: str = None) -> tuple[bool, int]:
+def valido_entero(mensaje:str = None) -> tuple[bool, int]:
     
     if mensaje is None:
         

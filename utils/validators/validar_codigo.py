@@ -15,6 +15,7 @@ def valido_codigo(mensaje: str = None, num: int = None) -> tuple[bool, str]:
     patron = rf'^[A-Z][A-Za-z0-9]{{{num - 1}}}$'
 
     if not re.match(patron, codigo):
+        
         uhp.borrar_pantalla()
         print(f"\n\tERROR: El código debe tener {num} caracteres, solo letras y números, y empezar con mayúscula.\n")
         uhp.Esperar_tecla()
