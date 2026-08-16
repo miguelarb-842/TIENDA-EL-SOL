@@ -15,4 +15,4 @@ def list_products()->None:
              """)
         print("===========================================\n")
         
-    uhp.Esperar_tecla("> Presione enter para volver al menu")
+    uhp.esperar_tecla("> Presione enter para volver al menu")

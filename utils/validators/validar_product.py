@@ -14,7 +14,7 @@ def val_prodct(
         
         uhp.borrar_pantalla()
         print("Se requiere ingresar todos los parámetros")
-        uhp.Esperar_tecla()
+        uhp.esperar_tecla()
         
         return False
 
@@ -26,21 +26,21 @@ def val_prodct(
                 
                 uhp.borrar_pantalla()
                 print(f"\n{mensaje} con el {clave}: {valor}.")
-                uhp.Esperar_tecla()
+                uhp.esperar_tecla()
                 return True
             
     except KeyError:
         
         uhp.borrar_pantalla()
         print(f"La clave '{clave}' no existe en los productos.")
-        uhp.Esperar_tecla()
+        uhp.esperar_tecla()
         return False
     
     except TypeError:
         
         uhp.borrar_pantalla()
         print("'lista' debe ser una lista de diccionarios.")
-        uhp.Esperar_tecla()
+        uhp.esperar_tecla()
         return False
 
     return False

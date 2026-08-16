@@ -1,23 +1,44 @@
 import utils.helper as uhp
 
-def valido_entero(mensaje:str = None) -> tuple[bool, int]:
-    
-    if mensaje is None:
+def valido_entero(mensaje:str, min:int = None, 
+    max:int = None, menu:str = None
+) -> int:
+    cont:int = 1;
+    while (True):
+        if (cont > 1 and  not menu is None):
+            print(menu);
+        try:
+            valor:int = int(input(mensaje))
+                
+        except ValueError:
+            uhp.borrar_pantalla()
+            print("\n\tERROR: Debe ingresar un número válido\n")
+            uhp.esperar_tecla()
+            
+        if(min is None  and max is None):
+                return valor;
+            
+        if (min is None):
+            if(valor <= max):
+                return valor;
+            
+            uhp.borrar_pantalla();
+            print(f"\n\tERROR: el valor tiene que ser menor o igual a {max}");
+            uhp.esperar_tecla();
+            continue;
+            
+        if(max is None):
+            if(valor >= min):
+                return valor;
+            
+            uhp.borrar_pantalla();
+            print(f"\n\tERROR: el valor tiene que ser meno o igual a {min}");
+            uhp.esperar_tecla();
+            continue;
+            
+        if(valor >= min and  valor <= max):
+            return valor;
         
-        uhp.borrar_pantalla()
-        print("Se requiere ingresar un valor")
-        uhp.Esperar_tecla()
-        return False, None
-
-    try:
-        
-        valor = int(input(mensaje))
-        return True, valor
-    
-    except ValueError:
-        
-        uhp.borrar_pantalla()
-        print("\n\tERROR: Debe ingresar un número entero válido.\n")
-        uhp.Esperar_tecla()
-        return False, None
-    
+        uhp.borrar_pantalla();
+        print(f"\n\tERROR: el valor tiene que ser menor o igual a {max}");
+        uhp.esperar_tecla();
