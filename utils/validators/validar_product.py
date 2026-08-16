@@ -2,22 +2,13 @@ import utils.helper as uhp
 
 def val_prodct(
     
-    valor:str = None,
-    clave:str = None,
-    lista:list = None,
-    mensaje:str = None
+    valor:str,
+    clave:str,
+    lista:list,
+    mensaje:str
     
     ) -> bool:
     
-
-    if any(v is None for v in (valor, clave, lista, mensaje)):
-        
-        uhp.borrar_pantalla()
-        print("Se requiere ingresar todos los parámetros")
-        uhp.esperar_tecla()
-        
-        return False
-
     try:
         
         for item in lista:
@@ -27,7 +18,7 @@ def val_prodct(
                 uhp.borrar_pantalla()
                 print(f"\n{mensaje} con el {clave}: {valor}.")
                 uhp.esperar_tecla()
-                return True
+                return False
             
     except KeyError:
         
@@ -43,4 +34,4 @@ def val_prodct(
         uhp.esperar_tecla()
         return False
 
-    return False
+    return True;
