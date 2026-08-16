@@ -5,7 +5,7 @@ def salir_com(valor: str = None) -> bool:
     if valor is None:
         uhp.borrar_pantalla()
         print("ERROR: Invalido, se debe de ingresar un valor a la funcion")
-        uhp.Esperar_tecla()
+        uhp.esperar_tecla()
         return False
 
     try:
@@ -14,7 +14,7 @@ def salir_com(valor: str = None) -> bool:
         if valor == "EXIT":
             uhp.borrar_pantalla()
             print("Volviendo al menu...")
-            uhp.Esperar_tecla()
+            uhp.esperar_tecla()
             return True
 
         return False

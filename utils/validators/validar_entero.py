@@ -19,7 +19,7 @@ def valInt(mensaje:str, min:int = None, max:int = None)-> int:
                 
                 uhp.borrar_pantalla();
                 print(f"\n\tERROR: El numero debe ser menor o igual a {max}\n");
-                uhp.Esperar_tecla();
+                uhp.esperar_tecla();
                 uhp.borrar_pantalla();
                 continue;
             
@@ -30,7 +30,7 @@ def valInt(mensaje:str, min:int = None, max:int = None)-> int:
                 
                 uhp.borrar_pantalla();
                 print(f"\n\tERROR: El numero debe ser mayor o igual a {min}\n");
-                uhp.Esperar_tecla();
+                uhp.esperar_tecla();
                 uhp.borrar_pantalla();
                 continue;
             
@@ -39,7 +39,7 @@ def valInt(mensaje:str, min:int = None, max:int = None)-> int:
             
             uhp.borrar_pantalla();
             print(f"\n\tERROR: El numero debe estar entre {min} y {max}")
-            uhp.Esperar_tecla();
+            uhp.esperar_tecla();
             uhp.borrar_pantalla();
             continue;
             
@@ -47,6 +47,6 @@ def valInt(mensaje:str, min:int = None, max:int = None)-> int:
             
             uhp.borrar_pantalla();
             print("\n\tERROR:  pueNodes entrar letras.\n");
-            uhp.Esperar_tecla();
+            uhp.esperar_tecla();
             uhp.borrar_pantalla();
                 

@@ -6,7 +6,7 @@ def valido_codigo(mensaje: str = None, num: int = None) -> tuple[bool, str]:
     if (mensaje is None) or (num is None):
         uhp.borrar_pantalla()
         print("Se requieren ingresar los valores")
-        uhp.Esperar_tecla()
+        uhp.esperar_tecla()
         return False, None
 
     codigo = input(mensaje).strip().upper()
@@ -18,7 +18,7 @@ def valido_codigo(mensaje: str = None, num: int = None) -> tuple[bool, str]:
         
         uhp.borrar_pantalla()
         print(f"\n\tERROR: El código debe tener {num} caracteres, solo letras y números, y empezar con mayúscula.\n")
-        uhp.Esperar_tecla()
+        uhp.esperar_tecla()
         return False, None
 
     return True, codigo
