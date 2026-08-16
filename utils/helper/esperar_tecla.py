@@ -1,2 +1,7 @@
-def esperar_tecla(mensaje:str = "> Presione Enter para continuar..."):
-    input(mensaje)
+def esperar_tecla(mensaje: str = None) -> input:
+    
+    if mensaje is None:
+        input("> Presione Enter para continuar...")
+        
+    else:
+        input(mensaje)
