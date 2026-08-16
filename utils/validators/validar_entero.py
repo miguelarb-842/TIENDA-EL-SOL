@@ -46,7 +46,7 @@ def valInt(mensaje:str, min:int = None, max:int = None)-> int:
         except Exception:
             
             uhp.borrar_pantalla();
-            print("\n\tERROR:  pueNodes entrar letras.\n");
+            print("\n\tERROR: No puedes ingresar letras o espacios.\n");
             uhp.esperar_tecla();
             uhp.borrar_pantalla();
                 

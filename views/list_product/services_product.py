@@ -10,8 +10,8 @@ def list_products()->None:
         print(f"""
              codigo: {producto["codigo"]}
              nombre: {producto["nombre"]}
-             precio: {producto["precio"]}
-             stock: {producto["stock"]}
+             precio: {producto["precio"]} C$
+             stock en existencia: {producto["stock"]}
              """)
         print("===========================================\n")
         

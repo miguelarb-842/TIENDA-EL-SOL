@@ -1,42 +1,33 @@
 import utils.helper as uhp
 
-def valido_entero(mensaje:str, min:int = None, 
-    max:int = None
-) -> int:
-    while (True):
+def valido_entero(mensaje: str, min: int = None, max: int = None) -> int:
+    
+    while True:
         try:
-            uhp.borrar_pantalla();
-            valor:int = int(input(mensaje))
-                
+            uhp.borrar_pantalla()
+            valor: int = int(input(mensaje))
         except ValueError:
             uhp.borrar_pantalla()
-            print("\n\tERROR: Debe ingresar un número válido\n")
+            print("\n\tERROR: Debe ingresar un número entero válido\n")
             uhp.esperar_tecla()
-            
-        if(min is None  and max is None):
-                return valor;
-            
-        if (min is None):
-            if(valor <= max):
-                return valor;
-            
-            uhp.borrar_pantalla();
-            print(f"\n\tERROR: el valor tiene que ser mayor o igual a {max}");
-            uhp.esperar_tecla();
-            continue;
-            
-        if(max is None):
-            if(valor >= min):
-                return valor;
-            
-            uhp.borrar_pantalla();
-            print(f"\n\tERROR: el valor tiene que ser menor o igual a {min}");
-            uhp.esperar_tecla();
-            continue;
-            
-        if(valor >= min and  valor <= max):
-            return valor;
-        
-        uhp.borrar_pantalla();
-        print(f"\n\tERROR: el valor tiene que ser menor o igual a {max}");
-        uhp.esperar_tecla();
+            continue
+
+        # Validaciones de rango
+        if min is not None and max is not None:
+            if not (min <= valor <= max):
+                uhp.borrar_pantalla()
+                print(f"\n\tERROR: El valor tiene que estar entre {min} y {max}\n")
+                uhp.esperar_tecla()
+                continue
+        elif min is not None and valor < min:
+            uhp.borrar_pantalla()
+            print(f"\n\tERROR: El valor tiene que ser mayor o igual a {min}\n")
+            uhp.esperar_tecla()
+            continue
+        elif max is not None and valor > max:
+            uhp.borrar_pantalla()
+            print(f"\n\tERROR: El valor tiene que ser menor o igual a {max}\n")
+            uhp.esperar_tecla()
+            continue
+
+        return valor

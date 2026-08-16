@@ -30,9 +30,9 @@ def main():
                 pass
             
             case _:
+                uph.borrar_pantalla()
                 print("Error")
             
 if __name__ == "__main__":
     main()
         
-    
