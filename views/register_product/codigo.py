@@ -1,9 +1,9 @@
 import data
 import utils.helper as uhp
 import utils.validators as vl
+import re
 
 def codigo()-> str:
-    import re;
     
     codigo:str;
     while(True):
