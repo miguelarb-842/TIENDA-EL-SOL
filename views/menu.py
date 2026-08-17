@@ -2,7 +2,7 @@ import utils.validators as vl
 
 def menu()->int:
     
-    return vl.valInt(
+    return vl.valido_entero(
         
     """
     "-------- SISTEMA DE GESTION - EL SOL --------\n"
