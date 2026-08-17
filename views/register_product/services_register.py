@@ -35,7 +35,6 @@ def agregar_producto() -> None:
             f"{resumen}\n\t¿Desea guardar este producto? (Si/No): ",
             salida= "Se ha cancelando el ingreso del producto al inventario…",
             uhbor= "Presione ´Enter´ para regresar al menu"
-             
             ):
             return;
         

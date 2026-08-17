@@ -21,6 +21,7 @@ def main():
                 vw.agregar_producto()
                 
             case 3: #quitar producto
+                vw.elimar_producto()
                 pass
             
             case 4: #registar stock
