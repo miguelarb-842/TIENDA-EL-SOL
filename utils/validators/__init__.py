@@ -1,5 +1,3 @@
-from .validar_entero import valInt
-from .validar_decimal import val_float
 from .validar_product import val_prodct
 
 from .valido_entero import valido_entero
@@ -8,6 +6,7 @@ from .validar_codigo import valido_codigo
 from .val_siono import val_siono
 from .is_text import is_text;
 from .val_name import val_name;
+from .buscar_producto import val_menu_bus
 
 __all__ = [
     
@@ -20,5 +19,6 @@ __all__ = [
     "val_siono",
     "is_text",
     "val_name",
+    "val_menu_bus",
     
     ]

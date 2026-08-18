@@ -1,7 +1,6 @@
 import data
 import utils.helper as uhp
 import utils.validators as vl
-from .vista_menu import val_menu_bus
 
 def elimar_producto():
     
@@ -17,7 +16,8 @@ def elimar_producto():
     ): 
         return
     
-    opcion: int = val_menu_bus()
+    uhp.borrar_pantalla()
+    opcion: int = vl.val_menu_bus()
     uhp.borrar_pantalla()
     
     match opcion:

@@ -1,9 +1,10 @@
 import data
 import utils.helper as uhp
 
-def list_products()->None:
+def lista_productos():
     
     uhp.borrar_pantalla()
+    
     print("===========================================")
     for producto in data.inventario:
     
@@ -14,5 +15,3 @@ def list_products()->None:
              stock en existencia: {producto["stock"]}
              """)
         print("===========================================\n")
-        
-    uhp.esperar_tecla("> Presione enter para volver al menu")

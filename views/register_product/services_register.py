@@ -6,7 +6,7 @@ import views.register_product.codigo as cd
 def agregar_producto() -> None:
     if not vl.val_siono(
         
-        mensaje= "Estas seguiro de quere resgistrar un producto? (si/no): ",
+        mensaje= "Estas seguro de quere resgistrar un producto? (si/no): ",
         salida= "\n\tEntendio, no se ingresara ningun producto",
         uhbor = "\n\tPresione ´Enter´ para regresar al menu" 
         

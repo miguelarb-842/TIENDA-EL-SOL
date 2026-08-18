@@ -6,7 +6,6 @@ def valido_entero(mensaje: str, min: int = None, max: int = None) -> int:
         
         try:
             
-            uhp.borrar_pantalla()
             valor: int = int(input(mensaje))
             
         except ValueError:
@@ -14,6 +13,7 @@ def valido_entero(mensaje: str, min: int = None, max: int = None) -> int:
             uhp.borrar_pantalla()
             print("\n\tERROR: Debe ingresar un número entero válido\n")
             uhp.esperar_tecla()
+            uhp.borrar_pantalla()
             continue
 
         if min is not None and max is not None:
@@ -23,6 +23,7 @@ def valido_entero(mensaje: str, min: int = None, max: int = None) -> int:
                 uhp.borrar_pantalla()
                 print(f"\n\tERROR: El valor tiene que estar entre {min} y {max}\n")
                 uhp.esperar_tecla()
+                uhp.borrar_pantalla()
                 continue
             
         elif min is not None and valor < min:
@@ -30,6 +31,7 @@ def valido_entero(mensaje: str, min: int = None, max: int = None) -> int:
             uhp.borrar_pantalla()
             print(f"\n\tERROR: El valor tiene que ser mayor o igual a {min}\n")
             uhp.esperar_tecla()
+            uhp.borrar_pantalla()
             continue
         
         elif max is not None and valor > max:
@@ -37,6 +39,7 @@ def valido_entero(mensaje: str, min: int = None, max: int = None) -> int:
             uhp.borrar_pantalla()
             print(f"\n\tERROR: El valor tiene que ser menor o igual a {max}\n")
             uhp.esperar_tecla()
+            uhp.borrar_pantalla()
             continue
 
         return valor

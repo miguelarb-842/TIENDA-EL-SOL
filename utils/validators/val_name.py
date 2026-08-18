@@ -1,7 +1,7 @@
 from .is_text import is_text
 import utils.helper as uh
 
-def val_name(mensaje:str, menu:str = None)-> str:
+def val_name(mensaje:str)-> str:
     
     name:str;
     while (True):
@@ -14,6 +14,3 @@ def val_name(mensaje:str, menu:str = None)-> str:
         print("\n\tEl nombre solo permite letras y espacios.\n");
         uh.esperar_tecla();
         uh.borrar_pantalla();
-        
-        if(not menu is None):
-            print(menu);

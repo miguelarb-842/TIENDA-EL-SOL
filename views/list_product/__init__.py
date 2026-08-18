@@ -1,3 +1,3 @@
-from .services_product import list_products
+from .services_product import lista_productos
 
-__all__ = ["list_products"]
+__all__ = ["lista_productos"]
