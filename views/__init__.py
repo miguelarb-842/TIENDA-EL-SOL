@@ -3,7 +3,6 @@ from .register_product import agregar_producto
 from .delete_product import elimar_producto
 from .register_sales import agregar_stok
 from .create_shopping.tienda import tienda
-
 from .menu import menu
 
 

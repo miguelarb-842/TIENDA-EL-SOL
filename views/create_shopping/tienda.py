@@ -1,4 +1,4 @@
-import views.create_shopping.backend as bk
+import views.create_shopping.shared as bk
 import data
 import utils.helper as uhp
 import utils.validators as vl

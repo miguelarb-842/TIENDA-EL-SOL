@@ -36,8 +36,8 @@ def elimar_producto():
             uhp.borrar_pantalla("monda")
 
 
-
-def eliminar_pord(clave:str, va_param:function)->None:
+from typing import Callable;
+def eliminar_pord(clave:str, va_param:Callable)->None:
     
     while True:
         

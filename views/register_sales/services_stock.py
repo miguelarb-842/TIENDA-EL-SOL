@@ -36,8 +36,8 @@ def agregar_stok()->None:
         case _:
             uhp.borrar_pantalla("monda")
 
-
-def add_stock(clave: str, va_param:function) -> None:
+from typing import Callable
+def add_stock(clave: str, va_param:Callable) -> None:
 
     while True:
         
