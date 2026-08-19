@@ -15,6 +15,7 @@ def procesar_compra(carrito: list[dict]) -> None:
         data.inventario[indice]["stock"] -= cantidad
 
         print(
+          
             f"""
               {producto["nombre"]},
               {producto["codigo"]}
@@ -22,6 +23,7 @@ def procesar_compra(carrito: list[dict]) -> None:
             \tStock anterior: {stock_anterior}
             \tStock vendido: {cantidad}
             \tStock actual: {data.inventario[indice]["stock"]}
-            """)
-
+            """
+            )
+        
     uhp.esperar_tecla("Se ha realizado la venta correctamente, presione enter para volver al menu")

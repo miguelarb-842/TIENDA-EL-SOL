@@ -5,15 +5,17 @@ import utils.validators as vl
 
 def buscar_producto( clave: str, param: str ) -> int | None:
     
+    param_normalizado = str(param).strip().lower()
+    
     for indice, producto in enumerate(data.inventario):
         
-        if producto[clave] == param:
-            
+        valor_producto = str(producto[clave]).strip().lower()
+        
+        if valor_producto == param_normalizado:
             return indice
         
     return None
-
-
+        
 
 def agregar_al_carrito(
     
@@ -27,15 +29,22 @@ def agregar_al_carrito(
     uhp.borrar_pantalla()
 
     if (indice := buscar_producto(clave, param)) is None:
-        
         print(f'El producto con el {clave} "{param}" NO FUE ENCONTRADO')
         uhp.esperar_tecla()
         return
 
     producto = data.inventario[indice]
 
+    cantidad_en_carrito = sum(item["cantidad"] for item in carrito if item["indice"] == indice)
+    
+    stock_disponible = producto["stock"] - cantidad_en_carrito
+
+    if stock_disponible <= 0:
+        print(f"Ya agregaste todo el stock disponible ({producto['stock']} unidades) de este producto al carrito.")
+        uhp.esperar_tecla()
+        return
+
     while True:
-        
         uhp.borrar_pantalla()
         cantidad: int = vl.valido_entero(
             f"""
@@ -44,30 +53,36 @@ def agregar_al_carrito(
                 codigo: {producto["codigo"]}
                 nombre: {producto["nombre"]}
                 precio: {producto["precio"]} C$
-                stock en existencia: {producto["stock"]}
+                stock total: {producto["stock"]}
+                stock disponible para agregar: {stock_disponible}
 
                 ¿Cuántas unidades desea vender?
                 > """
                 )
 
         if cantidad <= 0:
-            
             uhp.borrar_pantalla()
             print("Error: la cantidad debe ser mayor a 0")
             uhp.esperar_tecla()
             continue
 
-        if cantidad > producto["stock"]:
-            
+        # Ahora validamos contra el stock disponible, no contra el stock total
+        if cantidad > stock_disponible:
             uhp.borrar_pantalla()
-            print(f"Error: no hay suficiente stock (disponible: {producto['stock']})")
+            print(f"Error: no hay suficiente stock disponible (disponible: {stock_disponible})")
             uhp.esperar_tecla()
             continue
         
         break
 
-    carrito.append({"indice": indice, "cantidad": cantidad})
-    print(f"'{producto['nombre']}' añadido con {cantidad} unidades.\n")
+    # En lugar de solo hacer append, verificamos si ya existe para sumar la cantidad
+    item_existente = next((item for item in carrito if item["indice"] == indice), None)
+    if item_existente:
+        item_existente["cantidad"] += cantidad
+    else:
+        carrito.append({"indice": indice, "cantidad": cantidad})
+        
+    print(f"'{producto['nombre']}' actualizado. Tienes un total de {cantidad_en_carrito + cantidad} unidades en el carrito.\n")
     uhp.esperar_tecla()
   
   
